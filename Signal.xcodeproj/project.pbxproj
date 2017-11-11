@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		832C3A812A52BD749CF293B5 /* Pods_Signal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E46277D4B18BA61EFC9A55 /* Pods_Signal.framework */; };
 		988518FA1FB6EC50002E3E46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988518F91FB6EC50002E3E46 /* AppDelegate.swift */; };
 		988518FC1FB6EC50002E3E46 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988518FB1FB6EC50002E3E46 /* LoginViewController.swift */; };
 		988519011FB6EC50002E3E46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 988519001FB6EC50002E3E46 /* Assets.xcassets */; };
@@ -14,12 +15,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		104305003317C5C293536228 /* Pods-Signal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Signal/Pods-Signal.debug.xcconfig"; sourceTree = "<group>"; };
+		92E46277D4B18BA61EFC9A55 /* Pods_Signal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Signal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		988518F61FB6EC50002E3E46 /* Signal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Signal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		988518F91FB6EC50002E3E46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		988518FB1FB6EC50002E3E46 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		988519001FB6EC50002E3E46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		988519031FB6EC50002E3E46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		988519051FB6EC50002E3E46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7E8E35E3A3441B53D38A8DF /* Pods-Signal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Signal/Pods-Signal.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +31,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				832C3A812A52BD749CF293B5 /* Pods_Signal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F09662DEBDEDAAD9B1AD8EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92E46277D4B18BA61EFC9A55 /* Pods_Signal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		988518ED1FB6EC50002E3E46 = {
 			isa = PBXGroup;
 			children = (
 				988518F81FB6EC50002E3E46 /* Signal */,
 				988518F71FB6EC50002E3E46 /* Products */,
+				A32570C22BB0F9E909C3A169 /* Pods */,
+				2F09662DEBDEDAAD9B1AD8EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +76,15 @@
 			path = Signal;
 			sourceTree = "<group>";
 		};
+		A32570C22BB0F9E909C3A169 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				104305003317C5C293536228 /* Pods-Signal.debug.xcconfig */,
+				F7E8E35E3A3441B53D38A8DF /* Pods-Signal.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -68,9 +92,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 988519081FB6EC50002E3E46 /* Build configuration list for PBXNativeTarget "Signal" */;
 			buildPhases = (
+				FDB1C1B635B5497C1AC09283 /* [CP] Check Pods Manifest.lock */,
 				988518F21FB6EC50002E3E46 /* Sources */,
 				988518F31FB6EC50002E3E46 /* Frameworks */,
 				988518F41FB6EC50002E3E46 /* Resources */,
+				2741FA70D09FA483ADFBBF62 /* [CP] Embed Pods Frameworks */,
+				644C45266142D0F1B4258E32 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,6 +153,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2741FA70D09FA483ADFBBF62 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Signal/Pods-Signal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		644C45266142D0F1B4258E32 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Signal/Pods-Signal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDB1C1B635B5497C1AC09283 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		988518F21FB6EC50002E3E46 /* Sources */ = {
@@ -260,6 +335,7 @@
 		};
 		988519091FB6EC50002E3E46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 104305003317C5C293536228 /* Pods-Signal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -276,6 +352,7 @@
 		};
 		9885190A1FB6EC50002E3E46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7E8E35E3A3441B53D38A8DF /* Pods-Signal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
