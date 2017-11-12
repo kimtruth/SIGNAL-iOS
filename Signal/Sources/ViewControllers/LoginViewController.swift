@@ -45,10 +45,6 @@ final class LoginViewController: UIViewController {
     
     self.title = "로그인"
     
-    if #available(iOS 11.0, *) {
-      self.navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
     self.view.addSubview(self.logoImageView)
     self.view.addSubview(self.usernameTextField)
     self.view.addSubview(self.passwordTextField)
