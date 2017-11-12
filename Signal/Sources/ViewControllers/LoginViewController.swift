@@ -19,9 +19,11 @@ final class LoginViewController: UIViewController {
   fileprivate let usernameTextField = BorderedTextField().then {
     $0.autocorrectionType = .no
     $0.autocapitalizationType = .none
+    $0.font = UIFont.systemFont(ofSize: 14)
     $0.placeholder = "아이디"
   }
   fileprivate let passwordTextField = BorderedTextField().then {
+    $0.font = UIFont.systemFont(ofSize: 14)
     $0.isSecureTextEntry = true
     $0.placeholder = "비밀번호"
   }
