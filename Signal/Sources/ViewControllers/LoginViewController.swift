@@ -45,6 +45,8 @@ final class LoginViewController: UIViewController {
     
     self.title = "로그인"
     
+    self.loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+    
     self.view.addSubview(self.logoImageView)
     self.view.addSubview(self.usernameTextField)
     self.view.addSubview(self.passwordTextField)
@@ -78,6 +80,28 @@ final class LoginViewController: UIViewController {
     self.registerButton.snp.makeConstraints { make in
       make.top.equalTo(self.loginButton.snp.bottom).offset(16)
       make.left.right.height.equalTo(self.usernameTextField)
+    }
+  }
+  
+  // MARK: Actions
+  
+  @objc func loginButtonDidTap() {
+    guard let username = self.usernameTextField.text, !username.isEmpty else { return }
+    guard let password = self.passwordTextField.text, !password.isEmpty else { return }
+    
+    print("username : \(username)")
+    print("password : \(password)")
+    
+    AuthService.login(username: username, password: password) { response in
+      switch response.result {
+      case .failure(let error):
+        print("로그인 실패")
+        print(error)
+      case .success(let value):
+        print("로그인 성공")
+        print(value)
+      }
+      
     }
   }
   
