@@ -23,7 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   window.makeKeyAndVisible()
 
   let loginViewController = LoginViewController()
-  let navigationController = UINavigationController(rootViewController: loginViewController)
+  let navigationController = UINavigationController(rootViewController: loginViewController).then {
+      if #available(iOS 11.0, *) {
+        $0.navigationBar.prefersLargeTitles = true
+      }
+      $0.navigationBar.barTintColor = UIColor(red:0.25, green:0.29, blue:0.42, alpha:1.0)
+      $0.navigationBar.barStyle = .black
+      $0.navigationBar.isTranslucent = false
+      $0.navigationBar.tintColor = .white
+  }
   window.rootViewController = navigationController
 
   self.window = window
