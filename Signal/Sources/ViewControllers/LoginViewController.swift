@@ -17,6 +17,8 @@ final class LoginViewController: UIViewController {
     $0.contentMode = .scaleAspectFit
   }
   fileprivate let usernameTextField = BorderedTextField().then {
+    $0.autocorrectionType = .no
+    $0.autocapitalizationType = .none
     $0.placeholder = "아이디"
   }
   fileprivate let passwordTextField = BorderedTextField().then {
