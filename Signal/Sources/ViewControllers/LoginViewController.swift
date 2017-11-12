@@ -16,22 +16,11 @@ final class LoginViewController: UIViewController {
     $0.image = UIImage(named: "pic_login_logotype")
     $0.contentMode = .scaleAspectFit
   }
-  fileprivate let usernameTextField = UITextField().then {
-    $0.borderStyle = .none
-    $0.backgroundColor = .white
-    $0.layer.borderColor = UIColor(red:0.78, green:0.79, blue:0.82, alpha:1.0).cgColor
-    $0.layer.borderWidth = 1
-    $0.layer.cornerRadius = 2
-    $0.layer.sublayerTransform = CATransform3DMakeTranslation(16, 0, 0)
+  fileprivate let usernameTextField = BorderedTextField().then {
     $0.placeholder = "아이디"
   }
-  fileprivate let passwordTextField = UITextField().then {
-    $0.borderStyle = .none
-    $0.backgroundColor = .white
-    $0.layer.borderColor = UIColor(red:0.78, green:0.79, blue:0.82, alpha:1.0).cgColor
-    $0.layer.borderWidth = 1
-    $0.layer.cornerRadius = 2
-    $0.layer.sublayerTransform = CATransform3DMakeTranslation(16, 0, 0)
+  fileprivate let passwordTextField = BorderedTextField().then {
+    $0.isSecureTextEntry = true
     $0.placeholder = "비밀번호"
   }
   fileprivate let loginButton = UIButton().then {
