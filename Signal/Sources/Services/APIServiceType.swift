@@ -11,6 +11,6 @@ protocol APIServiceType {
 
 extension APIServiceType {
   static func url(_ path: String) -> String {
-    return "http://13.124.38.242:7504" + path
+    return "http://52.79.36.12:7504" + path
   }
 }
