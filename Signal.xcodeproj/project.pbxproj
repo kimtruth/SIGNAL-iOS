@@ -13,6 +13,9 @@
 		981034151FB8283500E84123 /* APIServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981034141FB8283500E84123 /* APIServiceType.swift */; };
 		981034171FB8284600E84123 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981034161FB8284600E84123 /* AuthService.swift */; };
 		98219EF81FB708AB003E88AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98219EF71FB708AB003E88AF /* LaunchScreen.storyboard */; };
+		986D62781FD7F4AA00AF20CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D62771FD7F4AA00AF20CA /* User.swift */; };
+		986D627B1FD7F67500AF20CA /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D627A1FD7F67500AF20CA /* UserType.swift */; };
+		986D627D1FD7FCE300AF20CA /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D627C1FD7FCE300AF20CA /* Global.swift */; };
 		988518FA1FB6EC50002E3E46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988518F91FB6EC50002E3E46 /* AppDelegate.swift */; };
 		98B2F14C1FB752C8003BA368 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B2F14B1FB752C8003BA368 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +29,9 @@
 		98219EF21FB70846003E88AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98219EF71FB708AB003E88AF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98219EFA1FB708CD003E88AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		986D62771FD7F4AA00AF20CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		986D627A1FD7F67500AF20CA /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		986D627C1FD7FCE300AF20CA /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		988518F61FB6EC50002E3E46 /* Signal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Signal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		988518F91FB6EC50002E3E46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B2F14B1FB752C8003BA368 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +84,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		986D62761FD7F49100AF20CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				986D62771FD7F4AA00AF20CA /* User.swift */,
+			);
+			name = Models;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		986D62791FD7F66500AF20CA /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				986D627A1FD7F67500AF20CA /* UserType.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
 		988518ED1FB6EC50002E3E46 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				988518F91FB6EC50002E3E46 /* AppDelegate.swift */,
+				986D627C1FD7FCE300AF20CA /* Global.swift */,
+				986D62761FD7F49100AF20CA /* Models */,
+				986D62791FD7F66500AF20CA /* Types */,
 				981034131FB8281E00E84123 /* Services */,
 				98B2F14A1FB752C8003BA368 /* ViewControllers */,
 				9810340B1FB81E6E00E84123 /* Views */,
@@ -256,10 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				986D627D1FD7FCE300AF20CA /* Global.swift in Sources */,
 				981034151FB8283500E84123 /* APIServiceType.swift in Sources */,
 				98B2F14C1FB752C8003BA368 /* LoginViewController.swift in Sources */,
+				986D627B1FD7F67500AF20CA /* UserType.swift in Sources */,
 				981034171FB8284600E84123 /* AuthService.swift in Sources */,
 				988518FA1FB6EC50002E3E46 /* AppDelegate.swift in Sources */,
+				986D62781FD7F4AA00AF20CA /* User.swift in Sources */,
 				9810340D1FB81EAA00E84123 /* BorderedTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

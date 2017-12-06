@@ -102,10 +102,12 @@ final class LoginViewController: UIViewController {
         print("로그인 실패")
         print(error)
       case .success(let value):
-        print("로그인 성공")
-        print(value)
+        guard let json = value as? [String: Any] else { return }
+        user = User(JSON: json)
+        
+        print("로그인 성공.")
+        print("User : \(String(describing: user))")
       }
-      
     }
   }
   
