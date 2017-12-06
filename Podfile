@@ -5,8 +5,11 @@ target 'Signal' do
   # Networking
   pod 'Alamofire', '~> 4.5'
 
+  # Model
+  pod 'ObjectMapper', '~> 3.1'
+
   # UI
-  pod 'SnapKit', '~> 4.0.0' 
+  pod 'SnapKit', '~> 4.0.0'
 
   # Misc.
   pod 'Then'

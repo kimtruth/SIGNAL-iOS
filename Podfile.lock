@@ -1,18 +1,21 @@
 PODS:
   - Alamofire (4.5.1)
+  - ObjectMapper (3.1.0)
   - SnapKit (4.0.0)
   - Then (2.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - ObjectMapper (~> 3.1)
   - SnapKit (~> 4.0.0)
   - Then
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   Then: 823f9813e1d4d0a814a5ba15e9c9d33ec7aca631
 
-PODFILE CHECKSUM: e87cb82284da767851d98d4e090156794b169fa2
+PODFILE CHECKSUM: 88f03414312747105fe0bf4dbdbfbfef609f8c09
 
 COCOAPODS: 1.1.1
