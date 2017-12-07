@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MeetingCardCell: UICollectionViewCell {
   
   // Mark: UI
@@ -26,15 +27,19 @@ class MeetingCardCell: UICollectionViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
+  // MARK: Configuring
+  
   func configure(meeting: Meeting) {
     self.backgroundColor = .lightGray
     self.contentLabel.text = meeting.content
     self.layoutSubviews()
   }
   
+  // MARK: Layout
+  
   override func layoutSubviews() {
     super.layoutSubviews()
-    self.contentLabel.frame.size.width = self.contentView.frame.width
+    self.contentLabel.width = self.contentView.width
     self.contentLabel.sizeToFit()
   }
 }
