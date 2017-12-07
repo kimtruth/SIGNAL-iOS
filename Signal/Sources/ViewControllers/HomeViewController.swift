@@ -12,6 +12,11 @@ import Alamofire
 
 final class HomeViewController: UIViewController {
   
+  // Mark: UI
+  
+  fileprivate let collectionView = UICollectionView(frame: .zero, collectionViewLayout:
+    UICollectionViewFlowLayout())
+  
   // Mark: Properties
   
   fileprivate var meetings: [Meeting] = []
