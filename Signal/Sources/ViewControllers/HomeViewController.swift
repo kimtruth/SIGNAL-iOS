@@ -72,8 +72,8 @@ extension HomeViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath)
-    cell.backgroundColor = .lightGray
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! MeetingCardCell
+    cell.configure(meeting: self.meetings[indexPath.item])
     return cell
   }
   

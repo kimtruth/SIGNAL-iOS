@@ -17,4 +17,8 @@ class MeetingCardCell: UICollectionViewCell {
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
+  func configure(meeting: Meeting) {
+    self.backgroundColor = .lightGray
+  }
 }
