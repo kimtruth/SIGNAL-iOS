@@ -107,6 +107,7 @@ final class LoginViewController: UIViewController {
         
         print("로그인 성공.")
         print("User : \(String(describing: user))")
+        self.present(HomeViewController(), animated: true, completion: nil)
       }
     }
   }
