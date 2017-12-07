@@ -53,6 +53,8 @@ final class HomeViewController: UIViewController {
           guard let postsJSONArray = value as? [[String: Any]] else { return }
           self.meetings = [Meeting](JSONArray: postsJSONArray)
           print("Meetings : \(self.meetings)")
+          
+          self.collectionView.reloadData()
         }
     }
   }
