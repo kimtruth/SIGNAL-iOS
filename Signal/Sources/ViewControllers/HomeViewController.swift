@@ -24,6 +24,9 @@ final class HomeViewController: UIViewController {
   // Mark: View Life Cycle
   
   override func viewDidLoad() {
+    super.viewDidLoad()
+    self.collectionView.frame = self.view.bounds
+    self.view.addSubview(self.collectionView)
     self.fetchMeetings()
   }
   
