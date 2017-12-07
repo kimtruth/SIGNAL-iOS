@@ -9,6 +9,7 @@ target 'Signal' do
   pod 'ObjectMapper', '~> 3.1'
 
   # UI
+  pod 'ManualLayout', '~> 1.3'
   pod 'SnapKit', '~> 4.0.0'
 
   # Misc.
