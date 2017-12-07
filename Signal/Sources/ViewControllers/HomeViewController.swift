@@ -8,6 +8,43 @@
 
 import UIKit
 
+import Alamofire
+
 final class HomeViewController: UIViewController {
+  
+  // Mark: Properties
+  
+  fileprivate var meetings: [Meeting] = []
+  
+  // Mark: View Life Cycle
+  
+  override func viewDidLoad() {
+    self.fetchMeetings()
+  }
+  
+  // MARK: Networking
+  
+  fileprivate func fetchMeetings() {
+    guard let token = user?.token else { return }
+    
+    let headers: HTTPHeaders = [
+      "Authroization": token,
+    ]
+    let urlString = "http://52.79.36.12:7504/meeting/4"
+    Alamofire
+      .request(urlString, method: .get, headers: headers)
+      .validate(statusCode: 200..<400)
+      .responseJSON { response in
+        switch response.result {
+        case .failure(let error):
+          print("미팅 로드 실패")
+          print(error)
+        case .success(let value):
+          guard let postsJSONArray = value as? [[String: Any]] else { return }
+          self.meetings = [Meeting](JSONArray: postsJSONArray)
+          print("Meetings : \(self.meetings)")
+        }
+    }
+  }
   
 }
