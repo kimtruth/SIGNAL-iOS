@@ -10,8 +10,16 @@ import UIKit
 
 class MeetingCardCell: UICollectionViewCell {
   
+  // Mark: UI
+  fileprivate let contentLabel = UILabel().then {
+    $0.numberOfLines = 2
+  }
+  
+  // Mark: Initializing
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
+    self.contentView.addSubview(contentLabel)
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -20,5 +28,13 @@ class MeetingCardCell: UICollectionViewCell {
   
   func configure(meeting: Meeting) {
     self.backgroundColor = .lightGray
+    self.contentLabel.text = meeting.content
+    self.layoutSubviews()
+  }
+  
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    self.contentLabel.frame.size.width = self.contentView.frame.width
+    self.contentLabel.sizeToFit()
   }
 }
