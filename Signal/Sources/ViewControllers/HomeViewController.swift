@@ -28,7 +28,7 @@ final class HomeViewController: UIViewController {
     self.collectionView.backgroundColor = .white
     self.collectionView.frame = self.view.bounds
     self.collectionView.dataSource = self
-    self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cardCell")
+    self.collectionView.register(MeetingCardCell.self, forCellWithReuseIdentifier: "cardCell")
     self.view.addSubview(self.collectionView)
     self.fetchMeetings()
   }
