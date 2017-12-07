@@ -18,6 +18,7 @@
 		986D62811FD7FF7800AF20CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D62801FD7FF7800AF20CA /* User.swift */; };
 		986D62871FD8D36600AF20CA /* MeetingCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D62861FD8D36600AF20CA /* MeetingCardCell.swift */; };
 		986D62891FD8D3D600AF20CA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D62881FD8D3D600AF20CA /* HomeViewController.swift */; };
+		986D628D1FD8D72100AF20CA /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D628C1FD8D72100AF20CA /* Meeting.swift */; };
 		988518FA1FB6EC50002E3E46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988518F91FB6EC50002E3E46 /* AppDelegate.swift */; };
 		98B2F14C1FB752C8003BA368 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B2F14B1FB752C8003BA368 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		986D62801FD7FF7800AF20CA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Signal/Sources/Models/User.swift; sourceTree = SOURCE_ROOT; };
 		986D62861FD8D36600AF20CA /* MeetingCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingCardCell.swift; sourceTree = "<group>"; };
 		986D62881FD8D3D600AF20CA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		986D628C1FD8D72100AF20CA /* Meeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Meeting.swift; path = Signal/Sources/Services/Meeting.swift; sourceTree = SOURCE_ROOT; };
 		988518F61FB6EC50002E3E46 /* Signal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Signal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		988518F91FB6EC50002E3E46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B2F14B1FB752C8003BA368 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				986D62801FD7FF7800AF20CA /* User.swift */,
+				986D628C1FD8D72100AF20CA /* Meeting.swift */,
 			);
 			name = Models;
 			path = "New Group";
@@ -296,6 +299,7 @@
 				986D62891FD8D3D600AF20CA /* HomeViewController.swift in Sources */,
 				986D62811FD7FF7800AF20CA /* User.swift in Sources */,
 				988518FA1FB6EC50002E3E46 /* AppDelegate.swift in Sources */,
+				986D628D1FD8D72100AF20CA /* Meeting.swift in Sources */,
 				986D62871FD8D36600AF20CA /* MeetingCardCell.swift in Sources */,
 				9810340D1FB81EAA00E84123 /* BorderedTextField.swift in Sources */,
 			);
