@@ -28,6 +28,7 @@ final class HomeViewController: UIViewController {
     self.collectionView.backgroundColor = .white
     self.collectionView.frame = self.view.bounds
     self.collectionView.dataSource = self
+    self.collectionView.delegate = self
     self.collectionView.register(MeetingCardCell.self, forCellWithReuseIdentifier: "cardCell")
     self.view.addSubview(self.collectionView)
     self.fetchMeetings()
@@ -63,7 +64,7 @@ final class HomeViewController: UIViewController {
 }
 
 
-// Mark - UICollectionViewDataSource
+// Mark: - UICollectionViewDataSource
 
 extension HomeViewController: UICollectionViewDataSource {
   
@@ -77,4 +78,13 @@ extension HomeViewController: UICollectionViewDataSource {
     return cell
   }
   
+}
+
+
+// Mark: - UICollectionViewFlowLayout
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let cellWidth = collectionView.frame.width
+    return CGSize(width: cellWidth, height: cellWidth)
+  }
 }
