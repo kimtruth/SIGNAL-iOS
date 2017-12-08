@@ -13,4 +13,7 @@ extension APIServiceType {
   static func url(_ path: String) -> String {
     return "http://52.79.36.12:7504" + path
   }
+  static func mediaUrl(_ path: String) -> String {
+    return self.url("/media/" + path)
+  }
 }
