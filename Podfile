@@ -14,6 +14,7 @@ target 'Signal' do
   pod 'SnapKit', '~> 4.0.0'
 
   # Misc.
+  pod 'CGFloatLiteral'
   pod 'Then'
 
 end
