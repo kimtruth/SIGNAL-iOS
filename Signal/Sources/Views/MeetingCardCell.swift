@@ -8,8 +8,18 @@
 
 import UIKit
 
-
 class MeetingCardCell: UICollectionViewCell {
+  
+  // MARK: Constants
+  
+  fileprivate struct Metric {
+    static let cardViewMargin = 16.f
+    static let cardViewHeight = 200.f
+    
+    static let profileImageViewTop = 12.f
+    static let profileImageViewLeft = 16.f
+    static let profileImageViewSize = 36.f
+  }
   
   // Mark: UI
   
@@ -23,6 +33,10 @@ class MeetingCardCell: UICollectionViewCell {
     $0.layer.shadowRadius = 8.0
     $0.layer.shadowOpacity = 0.1
   }
+  fileprivate let profileImageView = UIImageView().then {
+    $0.layer.cornerRadius = Metric.profileImageViewSize / 2.f
+    $0.clipsToBounds = true
+  }
   fileprivate let contentLabel = UILabel().then {
     $0.numberOfLines = 2
   }
@@ -31,6 +45,7 @@ class MeetingCardCell: UICollectionViewCell {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
+    self.cardView.addSubview(self.profileImageView)
     self.cardView.addSubview(self.contentLabel)
     self.contentView.addSubview(cardView)
     
@@ -52,12 +67,24 @@ class MeetingCardCell: UICollectionViewCell {
   
   override func layoutSubviews() {
     super.layoutSubviews()
-    self.cardView.top = 16
-    self.cardView.left = 16
-    self.cardView.width = self.contentView.width - 32
-    self.cardView.height = self.contentView.width - 32
+    guard let user = user else { return }
+    self.cardView.top = Metric.cardViewMargin
+    self.cardView.left = Metric.cardViewMargin
+    self.cardView.width = self.contentView.width - Metric.cardViewMargin * 2
+    self.cardView.height = Metric.cardViewHeight
+    
     self.cardView.layer.shadowPath = UIBezierPath(roundedRect: self.cardView.bounds, cornerRadius: 2).cgPath
     
+    self.profileImageView.left = Metric.profileImageViewLeft
+    self.profileImageView.top = Metric.profileImageViewTop
+    self.profileImageView.width = Metric.profileImageViewSize
+    self.profileImageView.height = Metric.profileImageViewSize
+    
+    print(AuthService.mediaUrl(user.profileImagePath))
+    self.profileImageView.backgroundColor = .lightGray
+    self.profileImageView.kf.setImage(with: URL(string: AuthService.mediaUrl(user.profileImagePath)))
+    
+    self.contentLabel.top = 100
     self.contentLabel.width = self.cardView.width
     self.contentLabel.sizeToFit()
   }
