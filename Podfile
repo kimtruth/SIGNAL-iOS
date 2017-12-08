@@ -4,6 +4,7 @@ target 'Signal' do
   use_frameworks!
   # Networking
   pod 'Alamofire', '~> 4.5'
+  pod 'Kingfisher', '~> 4.5'
 
   # Model
   pod 'ObjectMapper', '~> 3.1'
