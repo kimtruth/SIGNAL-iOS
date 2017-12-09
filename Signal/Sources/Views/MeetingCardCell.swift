@@ -19,6 +19,13 @@ class MeetingCardCell: UICollectionViewCell {
     static let profileImageViewTop = 12.f
     static let profileImageViewLeft = 16.f
     static let profileImageViewSize = 36.f
+    
+    static let nameLabelTop = 21.f
+    static let nameLabelLeft = 12.f
+  }
+  
+  fileprivate struct Font {
+    static let nameLabel = UIFont.systemFont(ofSize: 17, weight: .semibold)
   }
   
   // Mark: UI
@@ -37,6 +44,9 @@ class MeetingCardCell: UICollectionViewCell {
     $0.layer.cornerRadius = Metric.profileImageViewSize / 2.f
     $0.clipsToBounds = true
   }
+  fileprivate let nameLabel = UILabel().then {
+    $0.font = Font.nameLabel
+  }
   fileprivate let contentLabel = UILabel().then {
     $0.numberOfLines = 2
   }
@@ -47,6 +57,7 @@ class MeetingCardCell: UICollectionViewCell {
     super.init(frame: frame)
     self.cardView.addSubview(self.profileImageView)
     self.cardView.addSubview(self.contentLabel)
+    self.cardView.addSubview(self.nameLabel)
     self.contentView.addSubview(cardView)
     
   }
@@ -60,6 +71,7 @@ class MeetingCardCell: UICollectionViewCell {
   func configure(meeting: Meeting) {
     self.backgroundColor = .white
     self.contentLabel.text = meeting.content
+    self.nameLabel.text = "이름"
     self.layoutSubviews()
   }
   
@@ -83,6 +95,10 @@ class MeetingCardCell: UICollectionViewCell {
     print(AuthService.mediaUrl(user.profileImagePath))
     self.profileImageView.backgroundColor = .lightGray
     self.profileImageView.kf.setImage(with: URL(string: AuthService.mediaUrl(user.profileImagePath)))
+    
+    self.nameLabel.left = self.profileImageView.right + Metric.nameLabelLeft
+    self.nameLabel.top = Metric.nameLabelTop
+    self.nameLabel.sizeToFit()
     
     self.contentLabel.top = 100
     self.contentLabel.width = self.cardView.width
