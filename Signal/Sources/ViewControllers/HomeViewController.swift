@@ -20,6 +20,7 @@ final class HomeViewController: UIViewController {
   // Mark: Properties
   
   fileprivate var meetings: [Meeting] = []
+  fileprivate var publishers: [User] = []
   
   // Mark: View Life Cycle
   
@@ -31,20 +32,42 @@ final class HomeViewController: UIViewController {
     self.collectionView.delegate = self
     self.collectionView.register(MeetingCardCell.self, forCellWithReuseIdentifier: "cardCell")
     self.view.addSubview(self.collectionView)
+    self.fetchFollowings()
     self.fetchMeetings()
   }
   
   // MARK: Networking
   
-  fileprivate func fetchMeetings() {
+  fileprivate func fetchFollowings() {
     guard let token = user?.token else { return }
     
     let headers: HTTPHeaders = [
-      "Authroization": token,
-    ]
-    let urlString = "http://52.79.36.12:7504/meeting/4"
+      "Authorization": token,
+      ]
+    let urlString = "http://52.79.36.12:7504/account/following"
     Alamofire
       .request(urlString, method: .get, headers: headers)
+      .validate(statusCode: 200..<400)
+      .responseJSON { response in
+        switch response.result {
+        case .failure(let error):
+          print("미팅 로드 실패")
+          print(error)
+        case .success(let value):
+          guard let postsJSONArray = value as? [[String: Any]] else { return }
+          print(postsJSONArray)
+          self.publishers = [User](JSONArray: postsJSONArray)
+          print("Followings : \(self.publishers)")
+          
+          self.collectionView.reloadData()
+        }
+    }
+  }
+  
+  fileprivate func fetchMeetings() {
+    let urlString = "http://52.79.36.12:7504/meeting/4"
+    Alamofire
+      .request(urlString, method: .get)
       .validate(statusCode: 200..<400)
       .responseJSON { response in
         switch response.result {
