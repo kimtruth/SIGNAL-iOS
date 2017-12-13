@@ -44,7 +44,7 @@ final class HomeViewController: UIViewController {
     let headers: HTTPHeaders = [
       "Authorization": token,
       ]
-    let urlString = "http://52.79.36.12:7504/account/following"
+    let urlString = "http://blog.mikumiku.kr:25535/account/following"
     Alamofire
       .request(urlString, method: .get, headers: headers)
       .validate(statusCode: 200..<400)
@@ -65,7 +65,7 @@ final class HomeViewController: UIViewController {
   }
   
   fileprivate func fetchMeetings() {
-    let urlString = "http://52.79.36.12:7504/meeting/4"
+    let urlString = "http://blog.mikumiku.kr:25535/meeting/2"
     Alamofire
       .request(urlString, method: .get)
       .validate(statusCode: 200..<400)
